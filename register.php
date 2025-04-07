@@ -1,13 +1,14 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Use PDO consistently
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "uday";
+    $host = "gateway01.ap-southeast-1.prod.aws.tidbcloud.com";
+    $username = "2chHuJJjXN4T7Z9.root";
+    $password = "65J2Srkj49NBfmuX";
+    $database = "test";
+    $port = 4000
     
     try {
-        $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+        $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password, $port);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $fi_na = $_POST['fi_na'];
